@@ -1,0 +1,14 @@
+export { default as song1 } from './1.mp3';
+export { default as song2 } from './2.mp3';
+export { default as song3 } from './3.mp3';
+export { default as song4 } from './4.mp3';
+export { default as song5 } from './5.mp3';
+export { default as song6 } from './6.mp3';
+export { default as song7 } from './7.mp3';
+export { default as song8 } from './8.mp3';
+export { default as song9 } from './9.mp3';
+export { default as song10 } from './10.mp3';
+export { default as song11 } from './11.mp3';
+export { default as song12 } from './12.mp3';
+export { default as song13 } from './13.mp3';
+export { default as song14 } from './14.mp3';

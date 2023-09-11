@@ -1,0 +1,147 @@
+.dashboard {
+    position: absolute;
+    display: flex;
+    width: 85px;
+    height: 50px;
+    top: 645px;
+    right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 100;
+
+    .play,
+    .pause {
+        cursor: pointer;
+        font-size: 34px;
+    }
+
+    .backward,
+    .forward {
+        cursor: pointer;
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 627px;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    left: 0;
+    color: #fff;
+    font-weight: 100;
+    .clock,
+    .bar {
+        cursor: pointer;
+        font-size: 25px;
+        margin: 0 20px;
+    }
+    .action,
+    .bar {
+        color: #0bd42d;
+    }
+
+    .play,
+    .pause {
+        cursor: pointer;
+        font-size: 50px;
+    }
+
+    .backward,
+    .forward {
+        cursor: pointer;
+        font-size: 30px;
+    }
+}
+
+.full {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    top: 540px;
+    right: 0;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 100;
+    .shuffle {
+        cursor: pointer;
+        margin: 0 20px 0 20px;
+        font-size: 25px;
+    }
+    .shuffle.active {
+        color: #0bd42d;
+    }
+
+    .repeat {
+        cursor: pointer;
+        margin: 0 20px 0 20px;
+        font-size: 25px;
+    }
+    .repeat.active {
+        color: #0bd42d;
+    }
+
+    .play,
+    .pause {
+        cursor: pointer;
+        font-size: 50px;
+    }
+
+    .backward,
+    .forward {
+        cursor: pointer;
+    }
+}
+
+.shuffle {
+    color: #fff;
+    cursor: pointer;
+    margin: 0 20px 0 20px;
+    font-size: 25px;
+}
+.shuffle.active {
+    color: #0bd42d;
+}
+
+.repeat {
+    color: #fff;
+    cursor: pointer;
+    margin: 0 20px 0 20px;
+    font-size: 25px;
+}
+.repeat.active {
+    color: #0bd42d;
+}
+
+.playlist {
+    position: absolute;
+    display: flex;
+    width: 100px;
+    height: 80px;
+    top: 386px;
+    right: 16px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 100;
+
+    .play,
+    .pause {
+        cursor: pointer;
+        font-size: 38px;
+    }
+
+    .backward,
+    .forward {
+        cursor: pointer;
+    }
+}

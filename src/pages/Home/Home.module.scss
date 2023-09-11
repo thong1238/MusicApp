@@ -1,0 +1,10 @@
+.wrapper {
+    position: fixed;
+    display: flex;
+    width: var(--width);
+    height: var(--height);
+    flex-direction: column;
+    // left: 50%;
+    // transform: translateX(-50%);
+    background: linear-gradient(150deg, rgb(168, 45, 72), rgb(1, 1, 39));
+}

@@ -1,0 +1,27 @@
+.wrapper {
+    user-select: none;
+    height: 60px;
+    width: var(--width);
+}
+
+.list-navbar {
+    color: #fff;
+    top: 10px;
+    font-size: 22px;
+    display: flex;
+    position: absolute;
+    width: var(--width);
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        margin: 6px 0 0 20px;
+        font-weight: 400;
+        font-size: 22px;
+    }
+    .exit {
+        margin: 10px 20px 0 0;
+        cursor: pointer;
+        font-size: 30px;
+        color: #fff;
+    }
+}

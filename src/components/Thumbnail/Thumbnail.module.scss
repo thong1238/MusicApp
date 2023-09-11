@@ -1,0 +1,77 @@
+.wrapper {
+    user-select: none;
+    position: absolute;
+    display: flex;
+    width: var(--width);
+    height: 340px;
+    top: 50px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    img {
+        position: absolute;
+        width: 250px;
+        border-radius: 50%;
+    }
+}
+.rotate {
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.song {
+    position: absolute;
+    top: 245px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 110px;
+    width: 100%;
+
+    .song-name {
+        width: 254px;
+        color: #fff;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+        padding: 48px 10px 10px 10px;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+    }
+    .like,
+    .liked {
+        position: absolute;
+        top: 50px;
+        left: 324px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 25px;
+    }
+    .liked {
+        color: rgb(248, 0, 103);
+    }
+
+    .song-author {
+        margin-top: 10px;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        opacity: 0.6;
+    }
+}

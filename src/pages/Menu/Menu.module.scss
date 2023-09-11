@@ -1,0 +1,12 @@
+.wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: var(--width);
+    height: var(--height);
+    // border: 1px solid #666;
+    // left: 50%;
+    // transform: translateX(-50%);
+    background: linear-gradient(150deg, rgb(168, 45, 72), rgb(1, 1, 39));
+    background-color: #888;
+}

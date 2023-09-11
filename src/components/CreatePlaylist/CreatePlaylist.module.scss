@@ -1,0 +1,73 @@
+.wrapper {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--width);
+    height: var(--height);
+    // border: 1px solid #666;
+    // left: 50%;
+    // transform: translateX(-50%);
+    background: linear-gradient(150deg, rgb(168, 45, 72), rgb(1, 1, 39));
+    background-color: #888;
+}
+
+.title {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    .name {
+        width: 100%;
+        height: 30px;
+        background-color: transparent;
+        border: transparent;
+        border-bottom: 1px solid #666;
+        outline: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        padding-left: 10px;
+    }
+}
+
+.playlist-btn {
+    text-decoration: none;
+    width: 160px;
+    height: 50px;
+    border-radius: 999px;
+    position: relative;
+    top: 140px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #b91cb4;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.exit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // top: 6px;
+    margin: 10px 0 10px 10px;
+    width: 30px;
+    cursor: pointer;
+    height: 30px;
+    .exit-icon {
+        font-size: 20px;
+        color: #fff;
+    }
+}
