@@ -2,26 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /*Trên ip12pro */
-:root {
-    --primary: #fff;
-    --height: 716px; //(844px) ;//785px trên ip12prm(936px)
-    --width: 390px; //428px trên ip12prm
-}
+@media only screen and (max-width: 395px) {
+    :root {
+        --primary: #fff;
+        --height: 716px; //(844px) ;//785px trên ip12prm(936px)
+        --width: 390px; //428px trên ip12prm
+    }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-html {
-    font-size: 62.5%;
-}
-body {
-    font-family: 'Montserrat', sans-serif;
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    html {
+        font-size: 62.5%;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
 }
 
 /*Trên ip12pro max*/
-@media only screen and (min-width: 390px) {
+@media only screen and (min-width: 395px) {
     :root {
         --primary: #fff;
         --height: 785px; //(844px) ;//785px trên ip12prm(936px)

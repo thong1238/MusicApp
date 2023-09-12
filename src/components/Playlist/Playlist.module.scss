@@ -3,8 +3,9 @@
     position: relative;
     display: flex;
     width: var(--width);
-    height: 433px;
+    height: 65%;
     z-index: 1;
+    top: -5px;
     // left: 50%;
     // transform: translateX(-50%);
     background: linear-gradient(150deg, rgb(168, 45, 72), rgb(1, 1, 39));
