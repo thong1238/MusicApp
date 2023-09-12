@@ -15,7 +15,7 @@
         position: absolute;
         font-size: 30px;
         right: 10px;
-        top: 10px;
+        top: 4px;
     }
     ul {
         overflow: auto;
@@ -84,7 +84,7 @@
     position: absolute;
     display: flex;
     width: var(--width);
-    height: 700px;
+    height: 96%;
     top: 0;
 
     // left: 50%;
@@ -93,7 +93,7 @@
 
     flex-direction: column;
     h2 {
-        margin: 20px 0 13px 15px;
+        margin: 8px 0 13px 15px;
     }
 }
 

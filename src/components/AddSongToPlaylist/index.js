@@ -105,37 +105,39 @@ function AddSongToPlaylist({ bottom }) {
                         <FontAwesomeIcon className={cx('plus-box-icon')} icon={faCirclePlus} />
                         <div className={cx('add-song')}>Thêm bài</div>
                     </div>
-                    <ul className={cx('box-item')}>
-                        {context.selectedData.playlist.map((i, index) => (
-                            <li onClick={() => handleClick(i)} key={index} className={cx('song-item')}>
-                                <img className={cx('curr-img')} src={songs[i].img} alt="" />
-                                <div className={cx('name-author')}>
-                                    <div className={cx('song-name')}>{songs[i].name}</div>
-                                    <div className={cx('song-author')}>{songs[i].singer}</div>
-                                </div>
-                                <div
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        showRemoveSong(i);
-                                    }}
-                                    className={cx('wave-animation')}
-                                >
-                                    <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                                    <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                                    <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                    <Progress playlist />
-                    <CurrentPlaying playlist />
-                    <Dashboard playlist />
                 </div>
             ) : (
                 <div onClick={() => showPlaylist()} className={cx('plus-title')}>
                     Thêm bài hát
                 </div>
             )}
+            <div className={cx('box-container')}>
+                <ul className={cx('box-item')}>
+                    {context.selectedData.playlist.map((i, index) => (
+                        <li onClick={() => handleClick(i)} key={index} className={cx('song-item')}>
+                            <img className={cx('curr-img')} src={songs[i].img} alt="" />
+                            <div className={cx('name-author')}>
+                                <div className={cx('song-name')}>{songs[i].name}</div>
+                                <div className={cx('song-author')}>{songs[i].singer}</div>
+                            </div>
+                            <div
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    showRemoveSong(i);
+                                }}
+                                className={cx('wave-animation')}
+                            >
+                                <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
+                                <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
+                                <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+                <Progress playlist />
+                <CurrentPlaying playlist />
+                <Dashboard playlist />
+            </div>
             {context.componentStates.Playlist && <Playlist add hidePlaylist={hidePlaylist} />}
             {context.componentStates.RemovePlaylist && <RemovePlaylist />}
             {context.componentStates.RemoveSong && <RemoveSong />}
