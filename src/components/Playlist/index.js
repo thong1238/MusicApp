@@ -2,6 +2,9 @@ import songs from '~/assets/songs.js';
 import classNames from 'classnames/bind';
 import styles from './Playlist.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { loadSettings, saveSettings, removeSettings } from '~/config';
 
 import { useContext, useEffect } from 'react';
 import { Context } from '~/hook/Context';
@@ -25,7 +28,13 @@ function Playlist({ add, hidePlaylist }) {
     const handldeClick = (index) => {
         context.setPlaylist([index]);
     };
+    const toggleSetLike = (e, index) => {
+        e.stopPropagation();
 
+        const updateOrginDataLike = [...context.orginDataLike];
+        updateOrginDataLike[index].like = !updateOrginDataLike[index].like;
+        context.setOrginDataLike(updateOrginDataLike);
+    };
     return (
         <div className={classes}>
             <h2>Danh sách phát</h2>
@@ -44,10 +53,8 @@ function Playlist({ add, hidePlaylist }) {
                             <div className={cx('song-name')}>{song.name}</div>
                             <div className={cx('song-author')}>{song.singer}</div>
                         </div>
-                        <div className={cx('wave-animation')}>
-                            <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                            <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                            <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
+                        <div onClick={(e) => toggleSetLike(e, index)} className={cx('heart')}>
+                            {context.orginDataLike[index].like ? <FontAwesomeIcon className={cx('liked')} icon={solidHeart} /> : <FontAwesomeIcon className={cx('like')} icon={regularHeart} />}
                         </div>
                     </li>
                 ))}

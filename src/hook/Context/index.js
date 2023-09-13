@@ -71,11 +71,9 @@ function Provider({ children }) {
         setData(updatedData);
         if (updatedData.length > 0) {
             saveSettings('playlistDataLocal', updatedData);
-            console.log(132);
         }
     };
 
-    // const [playlistDataLocalStorage, setPlaylistDataLocalStorage] = useState(loadSettings('playlistDataLocal'));
     const playlistDataLocalStorage = loadSettings('playlistDataLocal');
 
     const [selectedName, setSelectedName] = useState(null);
@@ -84,14 +82,6 @@ function Provider({ children }) {
     useEffect(() => {
         addPlaylist(selectedName, playlist);
     }, [playlist, selectedName]);
-
-    //Data để lưu vào loacalStorage
-    const logData = {
-        data: data,
-        playlist: playlist,
-        selectedName: selectedName,
-        selectedData: selectedData,
-    };
 
     const [componentStates, setComponentStates] = useState({
         Library: false,
@@ -127,19 +117,10 @@ function Provider({ children }) {
                   return { i, like: false };
               }),
     );
-    const [isLiked, setIsLiked] = useState(orginDataLike[index].like);
 
     useEffect(() => {
-        setIsLiked(orginDataLike[index].like);
         saveSettings('likeDataLocal', orginDataLike);
-    }, [orginDataLike[index].like]);
-
-    const [flag, setFlag] = useState(false);
-    useEffect(() => {
-        orginDataLike[index].like = false;
-        setIsLiked(false);
-        setFlag(false);
-    }, [flag]);
+    }, [orginDataLike]);
 
     const value = {
         play,
@@ -184,12 +165,9 @@ function Provider({ children }) {
         handleSetTimeRemain,
         time,
         toSetTime,
-        isLiked,
-        setIsLiked,
         orginDataLike,
+        setOrginDataLike,
         playlistDataLocalStorage,
-        flag,
-        setFlag,
     };
     return <Context.Provider value={value}>{children}</Context.Provider>;
 }

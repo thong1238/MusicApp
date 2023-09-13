@@ -15,8 +15,9 @@ function Thumbnail() {
     const context = useContext(Context);
 
     const toggleSetLike = () => {
-        context.orginDataLike[context.index].like = !context.orginDataLike[context.index].like;
-        context.setIsLiked(!context.isLiked);
+        const updateOrginDataLike = [...context.orginDataLike];
+        updateOrginDataLike[context.index].like = !updateOrginDataLike[context.index].like;
+        context.setOrginDataLike(updateOrginDataLike);
     };
 
     return (
@@ -27,7 +28,7 @@ function Thumbnail() {
             <div className={cx('song')}>
                 <div className={cx('song-name')}>{songs[context.index].name}</div>
                 <div onClick={() => toggleSetLike()} className={cx('heart')}>
-                    {context.isLiked ? <FontAwesomeIcon className={cx('liked')} icon={solidHeart} /> : <FontAwesomeIcon className={cx('like')} icon={regularHeart} />}
+                    {context.orginDataLike[context.index].like ? <FontAwesomeIcon className={cx('liked')} icon={solidHeart} /> : <FontAwesomeIcon className={cx('like')} icon={regularHeart} />}
                 </div>
 
                 <div className={cx('song-author')}>{songs[context.index].singer}</div>

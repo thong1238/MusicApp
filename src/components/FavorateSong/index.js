@@ -19,6 +19,12 @@ function FavorateSong() {
         }
     });
 
+    const removeLike = (index) => {
+        const updateOrginDataLike = [...context.orginDataLike];
+        updateOrginDataLike[index].like = !updateOrginDataLike[index].like;
+        context.setOrginDataLike(updateOrginDataLike);
+    };
+
     return (
         <div className={cx('wrapper')}>
             <ul>
@@ -39,12 +45,11 @@ function FavorateSong() {
                         <div
                             onClick={(e) => {
                                 e.stopPropagation();
-                                context.toSetIndex(song.index);
-                                context.setFlag(true);
+                                removeLike(song.index);
                             }}
                             className={cx('heart')}
                         >
-                            <FontAwesomeIcon className={cx('liked')} icon={solidHeart} />
+                            {context.orginDataLike[song.index] && <FontAwesomeIcon className={cx('liked')} icon={solidHeart} />}
                         </div>
                     </li>
                 ))}
