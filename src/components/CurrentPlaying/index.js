@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 
 function CurrentPlaying({ menu, playlist }) {
     const classes = cx('playing', { menu, playlist });
+    const classesAnimation = cx('wave', 'active');
     const context = useContext(Context);
     return (
         <div className={classes}>
@@ -17,6 +18,11 @@ function CurrentPlaying({ menu, playlist }) {
             <div className={cx('name-author')}>
                 <div className={cx('song-name')}>{songs[context.index].name}</div>
                 <div className={cx('song-author')}>{songs[context.index].singer}</div>
+            </div>
+            <div className={cx('wave-animation', { playlist })}>
+                <div className={context.play ? classesAnimation : cx('wave')}></div>
+                <div className={context.play ? classesAnimation : cx('wave')}></div>
+                <div className={context.play ? classesAnimation : cx('wave')}></div>
             </div>
         </div>
     );

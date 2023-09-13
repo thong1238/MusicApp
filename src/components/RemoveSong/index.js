@@ -18,6 +18,15 @@ function RemoveSong() {
             ...prevState,
             RemoveSong: false,
         }));
+        const newSelectedDataPlaylist = context.selectedData.playlist.filter((item) => {
+            return item != context.i;
+        });
+
+        const updatedData = context.data.map((item) => {
+            return { ...item, playlist: [...newSelectedDataPlaylist] };
+        });
+        context.setData(updatedData);
+        saveSettings('playlistDataLocal', updatedData);
     };
 
     return (

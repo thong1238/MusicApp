@@ -31,14 +31,17 @@ function Provider({ children }) {
         }
     };
 
-    const [repeat, setRepeat] = useState(false);
+    const repeatDataLocalStorage = loadSettings('repeatDataLocal');
+    const [repeat, setRepeat] = useState(repeatDataLocalStorage ? repeatDataLocalStorage : false);
     const toggleSetRepeat = () => {
         setRepeat((prevState) => !prevState);
+        saveSettings('repeatDataLocal', !repeat);
     };
-
-    const [shuffle, setShuffle] = useState(false);
+    const shuffleDataLocalStorage = loadSettings('shuffleDataLocal');
+    const [shuffle, setShuffle] = useState(shuffleDataLocalStorage ? shuffleDataLocalStorage : false);
     const toggleSetShuffle = () => {
         setShuffle((prevState) => !prevState);
+        saveSettings('shuffleDataLocal', !shuffle);
     };
 
     const [randomPlay, setRandomPlay] = useState(false);
