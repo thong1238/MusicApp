@@ -67,7 +67,9 @@ function Provider({ children }) {
         saveSettings('playlistDataLocal', newData);
     };
     const addPlaylist = (selectedName, playlist) => {
-        const updatedData = data.map((item) => (item.name === selectedName ? { ...item, playlist: [...item.playlist, ...playlist] } : item));
+        const updatedData = data.map((item) => (item.name === selectedName ? { ...item, playlist: [...new Set([...item.playlist, ...playlist])] } : item));
+        const customUpdatedData = [...updatedData];
+        console.log(customUpdatedData.playlist);
         setData(updatedData);
         if (updatedData.length > 0) {
             saveSettings('playlistDataLocal', updatedData);
