@@ -71,6 +71,7 @@ function Provider({ children }) {
         setData(updatedData);
         if (updatedData.length > 0) {
             saveSettings('playlistDataLocal', updatedData);
+            console.log(132);
         }
     };
 
