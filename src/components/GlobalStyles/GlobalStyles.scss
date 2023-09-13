@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /*Trên ip12pro */
-@media only screen and (max-width: 395px) {
+@media only screen and (max-width: 391px) {
     :root {
         --primary: #fff;
         --height: 716px; //(844px) ;//785px trên ip12prm(936px)
@@ -23,7 +23,7 @@
 }
 
 /*Trên ip12pro max*/
-@media only screen and (min-width: 395px) {
+@media only screen and (min-width: 391px) {
     :root {
         --primary: #fff;
         --height: 785px; //(844px) ;//785px trên ip12prm(936px)

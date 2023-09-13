@@ -14,8 +14,8 @@
     .exit {
         position: absolute;
         font-size: 30px;
-        right: 10px;
-        top: 4px;
+        right: 4.5%;
+        top: 1.5%;
     }
     ul {
         overflow: auto;
@@ -85,7 +85,8 @@
     display: flex;
     width: var(--width);
     height: 100%;
-    top: 0;
+    top: 2px;
+    padding-top: 13px;
 
     // left: 50%;
     // transform: translateX(-50%);
