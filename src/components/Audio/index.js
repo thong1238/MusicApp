@@ -22,10 +22,23 @@ function Audio() {
         }
     }, [context.play]);
 
+    // useEffect(() => {
+    //     audioRef.current.load();
+    //     if (context.play) audioRef.current.play();
+    // }, [src]);
     useEffect(() => {
-        audioRef.current.load();
-        if (context.play) audioRef.current.play();
-    }, [src]);
+        const audioElement = audioRef.current;
+        const handleCanPlay = () => {
+            if (context.play) {
+                audioElement.play();
+            }
+        };
+        audioElement.addEventListener('canplaythrough', handleCanPlay);
+        audioElement.load();
+        return () => {
+            audioElement.removeEventListener('canplaythrough', handleCanPlay);
+        };
+    }, [src, context.play]);
 
     useEffect(() => {
         audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
