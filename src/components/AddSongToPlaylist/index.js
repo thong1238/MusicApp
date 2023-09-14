@@ -87,8 +87,6 @@ function AddSongToPlaylist({ bottom }) {
         }));
     };
 
-    console.log(context.selectedData.playlist);
-
     return (
         <div className={classes}>
             <div onClick={() => hideAddSongToPlaylist()} className={cx('exit')}>
