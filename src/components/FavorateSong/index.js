@@ -62,16 +62,18 @@ function FavorateSong() {
                     </li>
                 ))}
             </ul>
-            <div className={cx('btn-title')}>
-                <div
-                    onClick={() => {
-                        handleRandomPlay();
-                    }}
-                    className={cx('auto-play')}
-                >
-                    PHÁT NGẪU NHIÊN
+            {favorateSongs.length > 0 && (
+                <div className={cx('btn-title')}>
+                    <div
+                        onClick={() => {
+                            handleRandomPlay();
+                        }}
+                        className={cx('auto-play')}
+                    >
+                        PHÁT NGẪU NHIÊN
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

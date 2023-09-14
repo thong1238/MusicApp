@@ -12,7 +12,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function Playlist({ add, hidePlaylist }) {
+function Playlist({ add, hidePlaylist, menu }) {
     const classes = cx('wrapper', { add });
     const context = useContext(Context);
     const clickToPlay = (index) => {
@@ -69,7 +69,7 @@ function Playlist({ add, hidePlaylist }) {
                             <div className={cx('song-author')}>{song.singer}</div>
                         </div>
 
-                        {context.flag[context.indexOfObject].info[index] && <FontAwesomeIcon className={cx('done-icon')} icon={faCheck} />}
+                        {context.indexOfObject > -1 && context.flag[context.indexOfObject].info[index] ? <FontAwesomeIcon className={cx('done-icon', { menu })} icon={faCheck} /> : null}
 
                         <div onClick={(e) => toggleSetLike(e, index)} className={cx('heart')}>
                             {context.orginDataLike[index].like ? <FontAwesomeIcon className={cx('liked')} icon={solidHeart} /> : <FontAwesomeIcon className={cx('like')} icon={regularHeart} />}

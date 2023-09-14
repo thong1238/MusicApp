@@ -14,7 +14,7 @@ function Menu() {
         <div className={cx('wrapper')}>
             <Navbar>Đang phát</Navbar>
             <CurrentPlaying menu />
-            <Playlist />
+            <Playlist menu />
             <Progress menu />
             <Dashboard menu />
         </div>
