@@ -12,7 +12,7 @@ function Provider({ children }) {
     const [index, setIndex] = useState(0);
     const toSetIndex = (i) => setIndex(i);
 
-    //Xử lý bài hát yêu thích
+    //Xử lý thêm bài hát vào playlist
     const [i, setI] = useState(0);
     const toSetI = (i) => setI(i);
 
@@ -60,6 +60,8 @@ function Provider({ children }) {
 
     const [playlist, setPlaylist] = useState([]);
     const [data, setData] = useState(loadSettings('playlistDataLocal') ? loadSettings('playlistDataLocal') : []);
+    const nameLocalStorage = loadSettings('nameLocalStorage');
+    const [name, setName] = useState(nameLocalStorage || []);
 
     const addName = (name) => {
         const newData = [...data, { name, playlist: [] }];
@@ -68,8 +70,7 @@ function Provider({ children }) {
     };
     const addPlaylist = (selectedName, playlist) => {
         const updatedData = data.map((item) => (item.name === selectedName ? { ...item, playlist: [...new Set([...item.playlist, ...playlist])] } : item));
-        const customUpdatedData = [...updatedData];
-        console.log(customUpdatedData.playlist);
+
         setData(updatedData);
         if (updatedData.length > 0) {
             saveSettings('playlistDataLocal', updatedData);
@@ -80,7 +81,6 @@ function Provider({ children }) {
 
     const [selectedName, setSelectedName] = useState(null);
     const selectedData = (playlistDataLocalStorage ? playlistDataLocalStorage : data).find((item) => item.name === selectedName);
-
     useEffect(() => {
         addPlaylist(selectedName, playlist);
     }, [playlist, selectedName]);
@@ -124,6 +124,13 @@ function Provider({ children }) {
         saveSettings('likeDataLocal', orginDataLike);
     }, [orginDataLike]);
 
+    const flagLocalStore = loadSettings('tickToAddSong');
+    const [flag, setFlag] = useState(flagLocalStore || []);
+    saveSettings('tickToAddSong', flag);
+
+    const dataindexOfObjectLocal = loadSettings('indexOfObjectDataLocal');
+    const [indexOfObject, setIndexOfObject] = useState(dataindexOfObjectLocal || -1);
+
     const value = {
         play,
         toPlay,
@@ -154,6 +161,8 @@ function Provider({ children }) {
         setPlaylist,
         data,
         setData,
+        name,
+        setName,
         addName,
         addPlaylist,
         selectedName,
@@ -170,6 +179,10 @@ function Provider({ children }) {
         orginDataLike,
         setOrginDataLike,
         playlistDataLocalStorage,
+        flag,
+        setFlag,
+        indexOfObject,
+        setIndexOfObject,
     };
     return <Context.Provider value={value}>{children}</Context.Provider>;
 }

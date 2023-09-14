@@ -78,6 +78,13 @@
             width: 40px;
             height: 40px;
         }
+
+        .done-icon {
+            position: absolute;
+            top: 35%;
+            left: 80%;
+            color: #39e839;
+        }
     }
 }
 .add {
@@ -101,57 +108,6 @@
         height: 90%;
     }
 }
-
-// .wave-animation {
-//     padding-bottom: 15px;
-//     top: 7px;
-//     display: flex;
-//     align-items: flex-end;
-//     position: absolute;
-//     right: 16px;
-//     width: 40px;
-//     height: 40px;
-//     justify-content: center;
-// }
-
-// .wave {
-//     display: none;
-//     width: 4px;
-//     height: 4px;
-//     background-color: #fff;
-//     animation: unset;
-// }
-// .wave:nth-child(2) {
-//     width: 4px;
-//     height: 4px;
-//     margin: 0 4px;
-// }
-// .wave:nth-child(3) {
-//     width: 4px;
-//     height: 4px;
-// }
-
-// .wave.active {
-//     display: block;
-//     animation: wave 0.5s linear infinite;
-// }
-// .wave:nth-child(2).active {
-//     animation-delay: 0.4s;
-// }
-// .wave:nth-child(3).active {
-//     animation-delay: 1.8s;
-// }
-// @keyframes wave {
-//     0% {
-//         height: 6px;
-//     }
-//     50% {
-//         height: 10px;
-//     }
-//     100% {
-//         height: 6px;
-//     }
-// }
 
 .heart {
     position: absolute;

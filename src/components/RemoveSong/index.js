@@ -18,15 +18,35 @@ function RemoveSong() {
             ...prevState,
             RemoveSong: false,
         }));
+
         const newSelectedDataPlaylist = context.selectedData.playlist.filter((item) => {
-            return item != context.i;
+            return item !== context.i;
         });
 
-        const updatedData = context.data.map((item) => {
-            return { ...item, playlist: [...newSelectedDataPlaylist] };
+        const newDataUpdate = context.data.map((item) => {
+            if (item.name === context.selectedName) {
+                return { ...item, playlist: [...newSelectedDataPlaylist] };
+            } else {
+                return item;
+            }
         });
-        context.setData(updatedData);
-        saveSettings('playlistDataLocal', updatedData);
+
+        context.setData(newDataUpdate);
+        saveSettings('playlistDataLocal', newDataUpdate);
+
+        const selectedFlag = context.flag.find((object) => object.name === context.selectedName);
+        if (selectedFlag) {
+            const newFlag = [...context.flag];
+            const indexOfObject = newFlag.findIndex((object) => object.name === context.selectedName);
+            if (indexOfObject !== -1) {
+                selectedFlag.info[context.i] = false;
+                newFlag[indexOfObject] = { ...selectedFlag };
+                context.setFlag(newFlag);
+                saveSettings('tickToAddSong', newFlag);
+            }
+        } else {
+            console.log(`${context.selectedName} not found in context.flag.`);
+        }
     };
 
     return (

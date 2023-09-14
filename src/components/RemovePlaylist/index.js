@@ -25,6 +25,15 @@ function RemovePlaylist() {
         context.setSelectedName(null);
         context.setPlaylist([]);
         context.toRandomPlay(false);
+        const upDateName = context.name.filter((item) => item !== context.selectedName);
+        context.setName(upDateName);
+        saveSettings('nameLocalStorage', upDateName);
+
+        const newFlag = context.flag.filter((object) => object.name !== context.selectedName);
+        context.setFlag(newFlag);
+        saveSettings('indexOfObjectDataLocal', context.indexOfObject - 1);
+        context.setIndexOfObject((prevIndex) => prevIndex - 1);
+        saveSettings('tickToAddSong', newFlag);
     };
 
     return (

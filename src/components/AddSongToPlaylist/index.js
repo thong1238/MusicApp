@@ -6,6 +6,8 @@ import Progress from '~/components/Progress';
 import RemovePlaylist from '~/components/RemovePlaylist';
 import RemoveSong from '~/components/RemoveSong';
 
+import { saveSettings } from '~/config';
+
 import songs from '~/assets/songs';
 import { image0 } from '~/assets/images';
 
@@ -35,7 +37,20 @@ function AddSongToPlaylist({ bottom }) {
             ...prevState,
             Playlist: true,
         }));
+
+        const selectedFlag = context.flag.find((object) => object.name === context.selectedName);
+        if (selectedFlag) {
+            const newFlag = [...context.flag];
+            const indexOfObject = newFlag.findIndex((object) => object.name === context.selectedName);
+            if (indexOfObject !== -1) {
+                context.setIndexOfObject(indexOfObject);
+                saveSettings('indexOfObjectDataLocal', indexOfObject);
+            }
+        } else {
+            console.log(`${context.selectedName} not found in context.flag.`);
+        }
     };
+
     const hidePlaylist = () => {
         context.setComponentStates((prevState) => ({
             ...prevState,
@@ -65,6 +80,7 @@ function AddSongToPlaylist({ bottom }) {
     };
     const showRemoveSong = (i) => {
         context.toSetI(i);
+
         context.setComponentStates((prevState) => ({
             ...prevState,
             RemoveSong: true,

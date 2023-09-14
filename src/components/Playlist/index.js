@@ -2,11 +2,11 @@ import songs from '~/assets/songs.js';
 import classNames from 'classnames/bind';
 import styles from './Playlist.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
-import { loadSettings, saveSettings, removeSettings } from '~/config';
+import { saveSettings } from '~/config';
 
-import { useContext, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { Context } from '~/hook/Context';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,7 +14,6 @@ const cx = classNames.bind(styles);
 
 function Playlist({ add, hidePlaylist }) {
     const classes = cx('wrapper', { add });
-    const classesAnimation = cx('wave', 'active');
     const context = useContext(Context);
     const clickToPlay = (index) => {
         context.toSetIndex(index);
@@ -27,6 +26,21 @@ function Playlist({ add, hidePlaylist }) {
 
     const handldeClick = (index) => {
         context.setPlaylist([index]);
+
+        const selectedFlag = context.flag.find((object) => object.name === context.selectedName);
+        if (selectedFlag) {
+            const newFlag = [...context.flag];
+            const indexOfObject = newFlag.findIndex((object) => object.name === context.selectedName);
+            if (indexOfObject !== -1) {
+                context.setIndexOfObject(indexOfObject);
+                selectedFlag.info[index] = true;
+                newFlag[indexOfObject] = { ...selectedFlag };
+                context.setFlag(newFlag);
+                saveSettings('tickToAddSong', newFlag);
+            }
+        } else {
+            console.log(`${context.selectedName} not found in context.flag.`);
+        }
     };
     const toggleSetLike = (e, index) => {
         e.stopPropagation();
@@ -35,6 +49,7 @@ function Playlist({ add, hidePlaylist }) {
         updateOrginDataLike[index].like = !updateOrginDataLike[index].like;
         context.setOrginDataLike(updateOrginDataLike);
     };
+
     return (
         <div className={classes}>
             <h2>Danh sách phát</h2>
@@ -42,10 +57,10 @@ function Playlist({ add, hidePlaylist }) {
             <ul>
                 {songs.map((song, index) => (
                     <li
+                        key={index}
                         onClick={() => {
                             add ? handldeClick(index) : clickToPlay(index);
                         }}
-                        key={index}
                         className={cx('playing')}
                     >
                         <img className={cx('curr-img')} src={song.img} alt="" />
@@ -53,6 +68,9 @@ function Playlist({ add, hidePlaylist }) {
                             <div className={cx('song-name')}>{song.name}</div>
                             <div className={cx('song-author')}>{song.singer}</div>
                         </div>
+
+                        {context.flag[context.indexOfObject].info[index] && <FontAwesomeIcon className={cx('done-icon')} icon={faCheck} />}
+
                         <div onClick={(e) => toggleSetLike(e, index)} className={cx('heart')}>
                             {context.orginDataLike[index].like ? <FontAwesomeIcon className={cx('liked')} icon={solidHeart} /> : <FontAwesomeIcon className={cx('like')} icon={regularHeart} />}
                         </div>
