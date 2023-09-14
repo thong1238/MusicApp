@@ -8,7 +8,7 @@ import styles from './CurrentPlaying.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CurrentPlaying({ menu, playlist }) {
+function CurrentPlaying({ menu, playlist, favorate }) {
     const classes = cx('playing', { menu, playlist });
     const classesAnimation = cx('wave', 'active');
     const context = useContext(Context);
@@ -19,7 +19,7 @@ function CurrentPlaying({ menu, playlist }) {
                 <div className={cx('song-name')}>{songs[context.index].name}</div>
                 <div className={cx('song-author')}>{songs[context.index].singer}</div>
             </div>
-            <div className={cx('wave-animation', { playlist })}>
+            <div className={cx('wave-animation', { playlist, favorate })}>
                 <div className={context.play ? classesAnimation : cx('wave')}></div>
                 <div className={context.play ? classesAnimation : cx('wave')}></div>
                 <div className={context.play ? classesAnimation : cx('wave')}></div>

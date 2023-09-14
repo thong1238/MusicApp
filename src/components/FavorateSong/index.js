@@ -4,7 +4,7 @@ import styles from './FavorateSong.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+
 import { Context } from '~/hook/Context';
 import { useContext, useEffect } from 'react';
 
@@ -25,6 +25,14 @@ function FavorateSong() {
         context.setOrginDataLike(updateOrginDataLike);
     };
 
+    const handleRandomPlay = () => {
+        const arrayRandom = favorateSongs.map((item) => item.index);
+
+        const iRandom = Math.floor(Math.random() * arrayRandom.length);
+        context.toSetIndex(arrayRandom[iRandom]);
+        context.toRandomPlay(true);
+        context.toPlay();
+    };
     return (
         <div className={cx('wrapper')}>
             <ul>
@@ -54,6 +62,16 @@ function FavorateSong() {
                     </li>
                 ))}
             </ul>
+            <div className={cx('btn-title')}>
+                <div
+                    onClick={() => {
+                        handleRandomPlay();
+                    }}
+                    className={cx('auto-play')}
+                >
+                    PHÁT NGẪU NHIÊN
+                </div>
+            </div>
         </div>
     );
 }

@@ -13,7 +13,7 @@ function Favorate() {
         <div className={cx('wrapper')}>
             <Navbar>BÀI HÁT YÊU THÍCH</Navbar>
             <FavorateSong />
-            <CurrentPlaying />
+            <CurrentPlaying favorate />
             <Dashboard />
         </div>
     );
