@@ -88,11 +88,9 @@ function Audio() {
     }, [context.progress]);
 
     return (
-        <>
-            <audio ref={audioRef} onEnded={handleEnded} onTimeUpdate={() => context.toSetCurrentTime(audioRef.current.currentTime)}>
-                <source src={src} type="audio/mpeg" />
-            </audio>
-        </>
+        <audio ref={audioRef} onEnded={handleEnded} onTimeUpdate={() => context.toSetCurrentTime(audioRef.current.currentTime)}>
+            <source src={src} type="audio/mpeg" />
+        </audio>
     );
 }
 

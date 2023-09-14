@@ -163,12 +163,7 @@
             background-color: transparent;
         }
         input::-webkit-slider-thumb {
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            border: 5px solid rgb(28, 30, 172);
-            background-color: #fff;
+            display: none;
         }
 
         .slider__progress {
