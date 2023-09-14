@@ -87,6 +87,8 @@ function AddSongToPlaylist({ bottom }) {
         }));
     };
 
+    console.log(context.selectedData.playlist);
+
     return (
         <div className={classes}>
             <div onClick={() => hideAddSongToPlaylist()} className={cx('exit')}>
@@ -143,9 +145,9 @@ function AddSongToPlaylist({ bottom }) {
                                 }}
                                 className={cx('wave-animation')}
                             >
-                                <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                                <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
-                                <div className={context.index === index && context.play ? classesAnimation : cx('wave')}></div>
+                                <div className={context.index === i && context.play ? classesAnimation : cx('wave')}></div>
+                                <div className={context.index === i && context.play ? classesAnimation : cx('wave')}></div>
+                                <div className={context.index === i && context.play ? classesAnimation : cx('wave')}></div>
                             </div>
                         </li>
                     ))}
