@@ -254,7 +254,7 @@ const songs = [
     },
     {
         index: 22,
-        name: 'As If It`s You Last',
+        name: 'As If Its You Last',
         singer: 'Black Pink',
         path: song23,
         img: image23,
