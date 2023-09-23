@@ -40,6 +40,12 @@ import {
     image39,
     image40,
     image41,
+    image42,
+    image43,
+    image44,
+    image45,
+    image46,
+    image47,
 } from './images/index.js';
 import {
     song1,
@@ -83,6 +89,12 @@ import {
     song39,
     song40,
     song41,
+    song42,
+    song43,
+    song44,
+    song45,
+    song46,
+    song47,
 } from './musics/index.js';
 
 const songs = [
@@ -372,6 +384,48 @@ const songs = [
         singer: 'PhucXp ft Freak D',
         path: song41,
         img: image41,
+    },
+    {
+        index: 41,
+        name: 'Lối Nhỏ',
+        singer: 'Đen',
+        path: song42,
+        img: image42,
+    },
+    {
+        index: 42,
+        name: 'Nothing In Your Eyes',
+        singer: 'YANBI ft Mr.T',
+        path: song43,
+        img: image43,
+    },
+    {
+        index: 43,
+        name: 'Nơi Tình Yêu Bắt Đầu',
+        singer: 'Bùi Anh Tuấn',
+        path: song44,
+        img: image44,
+    },
+    {
+        index: 44,
+        name: 'Tự Tình 2',
+        singer: 'Trung Quân',
+        path: song45,
+        img: image45,
+    },
+    {
+        index: 45,
+        name: 'Back To December',
+        singer: 'Taylor Swift',
+        path: song46,
+        img: image46,
+    },
+    {
+        index: 46,
+        name: 'Love Story',
+        singer: 'Taylor Swift',
+        path: song47,
+        img: image47,
     },
 ];
 
