@@ -38,7 +38,8 @@ function Audio() {
         return () => {
             audioElement.removeEventListener('canplaythrough', handleCanPlay);
         };
-    }, [src, context.play]);
+    }, [src]);
+    //  context.play
 
     useEffect(() => {
         audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
