@@ -1,6 +1,6 @@
 import songs from '~/assets/songs';
 import { Context } from '~/hook/Context';
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
