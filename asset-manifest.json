@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MusicAppFinal/static/css/main.32613386.css",
-    "main.js": "/MusicAppFinal/static/js/main.f45ba923.js",
+    "main.js": "/MusicAppFinal/static/js/main.e869db03.js",
     "static/js/787.514cbbf0.chunk.js": "/MusicAppFinal/static/js/787.514cbbf0.chunk.js",
     "static/media/1.mp3": "/MusicAppFinal/static/media/1.c19adec010085849107a.mp3",
     "static/media/36.mp3": "/MusicAppFinal/static/media/36.33a61cedf01d365a2338.mp3",
@@ -21,13 +21,12 @@
     "static/media/7.mp3": "/MusicAppFinal/static/media/7.2c789d07ba30dcdc2a58.mp3",
     "static/media/4.mp3": "/MusicAppFinal/static/media/4.8e5e55d8e3767d69ced1.mp3",
     "static/media/44.mp3": "/MusicAppFinal/static/media/44.c1fef06af3f290c17754.mp3",
-    "static/media/2.mp3": "/MusicAppFinal/static/media/2.8d01bed69b168d135081.mp3",
+    "static/media/6.mp3": "/MusicAppFinal/static/media/6.8d01bed69b168d135081.mp3",
     "static/media/25.mp3": "/MusicAppFinal/static/media/25.75e8f989c94de6278a8e.mp3",
     "static/media/14.mp3": "/MusicAppFinal/static/media/14.7437d9abf7a84ea1fdb8.mp3",
     "static/media/15.mp3": "/MusicAppFinal/static/media/15.09d03be3230d9cefda37.mp3",
     "static/media/8.mp3": "/MusicAppFinal/static/media/8.c37e1db6c8121a73db79.mp3",
     "static/media/9.mp3": "/MusicAppFinal/static/media/9.534493884b3516206882.mp3",
-    "static/media/6.mp3": "/MusicAppFinal/static/media/6.844e74d27b7a28d458f7.mp3",
     "static/media/5.mp3": "/MusicAppFinal/static/media/5.f268b7ade7176f4e365b.mp3",
     "static/media/35.mp3": "/MusicAppFinal/static/media/35.20120faec774a1dcb363.mp3",
     "static/media/3.mp3": "/MusicAppFinal/static/media/3.24d9cf255f15da375fc4.mp3",
@@ -50,6 +49,7 @@
     "static/media/12.mp3": "/MusicAppFinal/static/media/12.57968fa3c46d2f4e06b7.mp3",
     "static/media/38.mp3": "/MusicAppFinal/static/media/38.d8d6f8388a00201d4379.mp3",
     "static/media/13.mp3": "/MusicAppFinal/static/media/13.263099df841658c214d1.mp3",
+    "static/media/2.mp3": "/MusicAppFinal/static/media/2.31cdcb2ef0a6fcca2ee7.mp3",
     "static/media/13.jpg": "/MusicAppFinal/static/media/13.a549ecdf4d594a35f0b4.jpg",
     "static/media/42.jpg": "/MusicAppFinal/static/media/42.f0de14563d4341bcf6c6.jpg",
     "static/media/8.jpg": "/MusicAppFinal/static/media/8.0e4d61f1be938d229014.jpg",
@@ -57,8 +57,9 @@
     "static/media/44.jpg": "/MusicAppFinal/static/media/44.d4586ccfdae138001ae3.jpg",
     "static/media/45.jpg": "/MusicAppFinal/static/media/45.e3f74e6763ca9c84783f.jpg",
     "static/media/1.jpg": "/MusicAppFinal/static/media/1.a13d632db6656715cf22.jpg",
-    "static/media/2.jpg": "/MusicAppFinal/static/media/2.a830738da8bb365ac49c.jpg",
+    "static/media/6.jpg": "/MusicAppFinal/static/media/6.a830738da8bb365ac49c.jpg",
     "static/media/9.jpg": "/MusicAppFinal/static/media/9.ac0a335e1e05bbdf2adb.jpg",
+    "static/media/2.jpg": "/MusicAppFinal/static/media/2.12f00e9a385cdd81c124.jpg",
     "static/media/7.jpg": "/MusicAppFinal/static/media/7.eb22325c044b3598b42f.jpg",
     "static/media/14.jpg": "/MusicAppFinal/static/media/14.b79169bd701817937c19.jpg",
     "static/media/11.jpg": "/MusicAppFinal/static/media/11.337d6fe287c7649c95af.jpg",
@@ -94,16 +95,15 @@
     "static/media/36.jpg": "/MusicAppFinal/static/media/36.e542c3bfc81161214bc7.jpg",
     "static/media/30.jpg": "/MusicAppFinal/static/media/30.8658b5ca8c8ad97db236.jpg",
     "static/media/41.jpg": "/MusicAppFinal/static/media/41.2d1e57e1757a69369901.jpg",
-    "static/media/6.jpg": "/MusicAppFinal/static/media/6.97d12417a6f1c25b9395.jpg",
     "static/media/46.jpg": "/MusicAppFinal/static/media/46.73dbf4caccc2439fe531.jpg",
     "static/media/0.PNG": "/MusicAppFinal/static/media/0.74614716d9e4eeefa471.PNG",
     "index.html": "/MusicAppFinal/index.html",
     "main.32613386.css.map": "/MusicAppFinal/static/css/main.32613386.css.map",
-    "main.f45ba923.js.map": "/MusicAppFinal/static/js/main.f45ba923.js.map",
+    "main.e869db03.js.map": "/MusicAppFinal/static/js/main.e869db03.js.map",
     "787.514cbbf0.chunk.js.map": "/MusicAppFinal/static/js/787.514cbbf0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32613386.css",
-    "static/js/main.f45ba923.js"
+    "static/js/main.e869db03.js"
   ]
 }
