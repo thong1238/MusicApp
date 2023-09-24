@@ -100,15 +100,15 @@ import {
 const songs = [
     {
         index: 0,
-        name: 'Hát linh tinh',
+        name: 'Hát Linh Tinh',
         singer: 'Thảo Minh',
         path: song1,
         img: image1,
     },
     {
         index: 1,
-        name: 'Haru Haru',
-        singer: 'Big Bang',
+        name: 'Vẫn Là Hát Linh Tinh',
+        singer: '037...',
         path: song2,
         img: image2,
     },
