@@ -112,13 +112,17 @@ function Provider({ children }) {
 
     //Handle like unlike the songs and localStorage save
     const dataLikeLocal = loadSettings('likeDataLocal');
-    const [orginDataLike, setOrginDataLike] = useState(
-        dataLikeLocal
-            ? dataLikeLocal
-            : songs.map((item, i) => {
-                  return { i, like: false };
-              }),
-    );
+    // const [orginDataLike, setOrginDataLike] = useState(
+    //     dataLikeLocal
+    //         ? dataLikeLocal
+    //         : songs.map((item, i) => {
+    //               return { i, like: false };
+    //           }),
+    // );
+
+    const initialDataLike = dataLikeLocal ? dataLikeLocal : Array.from({ length: 200 }, (_, i) => ({ i, like: false }));
+
+    const [orginDataLike, setOrginDataLike] = useState(initialDataLike);
 
     useEffect(() => {
         saveSettings('likeDataLocal', orginDataLike);
