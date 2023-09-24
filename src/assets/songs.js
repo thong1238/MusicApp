@@ -135,8 +135,8 @@ const songs = [
     },
     {
         index: 5,
-        name: 'Nơi Này Có Anh',
-        singer: 'Sơn Tùng MTP',
+        name: 'Haru Haru',
+        singer: 'Big Bang',
         path: song6,
         img: image6,
     },
